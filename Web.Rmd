@@ -22,6 +22,11 @@ library(leaflet)
 
 ```{r,echo=TRUE}
 library(leaflet)
+```
+
+## Data
+
+```{r,echo=TRUE}
 
 ## Adding Many Markers
 set.seed(2020-04-25)
