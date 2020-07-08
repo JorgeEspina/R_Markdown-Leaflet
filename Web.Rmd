@@ -1,0 +1,45 @@
+---
+title: "Web_Map"
+author: "Jorge Espina"
+date: "8/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## 1. Summary
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity.
+
+Leaflet is one of the most popular Javascript libraries for creating interactive maps. The leaflet R package allows you to create your own leaflet maps without needing to know any Javascript.
+
+## Packages
+```{r eruptions,echo=FALSE}
+library(leaflet)
+```
+
+```{r,echo=TRUE}
+library(leaflet)
+
+## Adding Many Markers
+set.seed(2020-04-25)
+df <- data.frame(lat = runif(20, min = 39.2, max = 39.3),
+                 lng = runif(20, min = -76.6, max = -76.5))
+
+##custom markers 
+hopkinsIcon <- makeIcon(
+  iconUrl = "http://brand.jhu.edu/content/uploads/2014/06/university.shield.small_.blue_.png",
+  iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+df %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers()
+
+
+
+```
